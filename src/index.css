@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Syne", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-ink: #0a0a0b;
+  --color-coal: #131316;
+  --color-carbon: #1c1c21;
+  --color-line: #26262d;
+  --color-cream: #f2f1ea;
+  --color-fog: #8b8b94;
+  --color-lime: #d6ff3f;
+  --color-violet: #8b7bff;
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-marquee-slow: marquee 55s linear infinite;
+  --animate-spin-slow: spin 14s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+html { scroll-behavior: auto; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+body {
+  background: #0a0a0b;
+  color: #f2f1ea;
+  font-family: "Space Grotesk", sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: #d6ff3f; color: #0a0a0b; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0a0a0b; }
+::-webkit-scrollbar-thumb { background: #2c2c34; border-radius: 99px; border: 2px solid #0a0a0b; }
+::-webkit-scrollbar-thumb:hover { background: #d6ff3f; }
+
+.font-display { font-family: "Syne", sans-serif; }
+.font-mono2 { font-family: "JetBrains Mono", monospace; }
+
+.text-stroke {
+  -webkit-text-stroke: 1.5px rgba(242,241,234,.85);
+  color: transparent;
+}
+.text-stroke-lime {
+  -webkit-text-stroke: 1.5px #d6ff3f;
+  color: transparent;
+}
+.text-stroke-faint {
+  -webkit-text-stroke: 1px rgba(242,241,234,.22);
+  color: transparent;
+}
+
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 90;
+  opacity: .055;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 8s steps(10) infinite;
+}
+@keyframes grain {
+  0%,100% { transform: translate(0,0); }
+  10% { transform: translate(-3%,-6%); }
+  30% { transform: translate(4%,3%); }
+  50% { transform: translate(-4%,6%); }
+  70% { transform: translate(6%,-2%); }
+  90% { transform: translate(-2%,4%); }
+}
+
+.mask-line { overflow: hidden; display: block; }
+.mask-line > span { display: block; will-change: transform; }
+
+.card-sheen { position: relative; overflow: hidden; }
+.card-sheen::before {
+  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.14) 50%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform .9s ease;
+}
+.card-sheen:hover::before { transform: translateX(120%); }
+
+.dot-grid {
+  background-image: radial-gradient(rgba(242,241,234,.14) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+section[id] { scroll-margin-top: 84px; }
