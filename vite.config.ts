@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => {
   }
 
   return {
+    base: './',
     plugins: [react(), tailwindcss()],
     envPrefix: ['VITE_', 'NEXT_PUBLIC_'],
     define: processEnvDefines,
