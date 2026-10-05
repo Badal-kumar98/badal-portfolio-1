@@ -42,7 +42,7 @@ try {
       cwd: tempDir,
       stdio: 'inherit'
     });
-    execSync('git push origin gh-pages', { cwd: tempDir, stdio: 'inherit' });
+    execSync('git push origin gh-pages --force', { cwd: tempDir, stdio: 'inherit' });
     console.log('Successfully pushed to gh-pages!');
   } else {
     console.log('gh-pages branch is already up to date.');
