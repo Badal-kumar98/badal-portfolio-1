@@ -77,7 +77,7 @@ export default function CaseStudy({ project, onClose }: { project: Project | nul
             <p className="cs-stagger font-mono2 text-[11px] uppercase tracking-[0.25em]" style={{ color: project.accent }}>
               {project.year} · {project.role}
             </p>
-            <h2 className="cs-stagger mt-2 font-display text-4xl font-extrabold leading-none md:text-6xl">
+            <h2 className="cs-stagger mt-2 font-display text-2xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
               {project.title}<span style={{ color: project.accent }}>.</span>
             </h2>
             <p className="cs-stagger mt-2 text-lg text-[#8b8b94]">{project.subtitle}</p>

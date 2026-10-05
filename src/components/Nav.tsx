@@ -62,10 +62,11 @@ export default function Nav({ ready }: { ready: boolean }) {
     const panel = document.getElementById("mobile-menu");
     if (!panel) return;
     if (open) {
-      gsap.fromTo(panel, { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 0.7, ease: "power4.inOut" });
-      gsap.fromTo(".m-link", { y: 60, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.07, duration: 0.6, ease: "power3.out", delay: 0.25 });
+      gsap.fromTo(panel, { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 0.6, ease: "power4.inOut" });
+      gsap.fromTo(".m-link", { y: 40, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.06, duration: 0.5, ease: "power3.out", delay: 0.2 });
       document.body.style.overflow = "hidden";
     } else {
+      gsap.to(panel, { clipPath: "inset(0 0 100% 0)", duration: 0.45, ease: "power4.inOut" });
       document.body.style.overflow = "";
     }
   }, [open]);

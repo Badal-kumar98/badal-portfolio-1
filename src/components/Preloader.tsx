@@ -25,13 +25,13 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
       });
       tl.to(counter, {
         v: 100,
-        duration: 2.1,
+        duration: 1.0,
         ease: "power2.inOut",
         onUpdate: () => setCount(Math.round(counter.v)),
       })
-        .to(".pre-bar-fill", { scaleX: 1, duration: 2.1, ease: "power2.inOut" }, 0)
-        .to(".pre-word span", { yPercent: 0, stagger: 0.07, duration: 0.9, ease: "power4.out" }, 0.15)
-        .to(".pre-fade", { opacity: 1, y: 0, stagger: 0.1, duration: 0.6, ease: "power3.out" }, 0.7);
+        .to(".pre-bar-fill", { scaleX: 1, duration: 1.0, ease: "power2.inOut" }, 0)
+        .to(".pre-word span", { yPercent: 0, stagger: 0.04, duration: 0.6, ease: "power4.out" }, 0.1)
+        .to(".pre-fade", { opacity: 1, y: 0, stagger: 0.06, duration: 0.45, ease: "power3.out" }, 0.4);
     }, root);
     return () => ctx.revert();
   }, [onDone]);

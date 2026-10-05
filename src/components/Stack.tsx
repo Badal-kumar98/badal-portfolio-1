@@ -45,35 +45,36 @@ export default function Stack() {
 
       <div className="mx-auto grid max-w-[1500px] items-center gap-12 px-5 md:px-10 lg:grid-cols-2">
         {/* Orbit visual */}
-        <div className="orb-grid relative mx-auto aspect-square w-full max-w-[480px]">
+        <div className="orb-grid relative mx-auto aspect-square w-full max-w-[320px] sm:max-w-[420px] md:max-w-[480px]">
           <div className="orbit-ring absolute inset-0 rounded-full border border-dashed border-[#33333c]">
-            <span className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rounded-full bg-[#d6ff3f] shadow-[0_0_20px_#d6ff3f]" />
+            <span className="absolute -top-2 left-1/2 h-3.5 w-3.5 sm:h-4 sm:w-4 -translate-x-1/2 rounded-full bg-[#d6ff3f] shadow-[0_0_20px_#d6ff3f]" />
           </div>
           <div className="orbit-ring-rev absolute inset-[12%] rounded-full border border-[#2a2a32]">
-            <span className="absolute -bottom-1.5 left-1/2 h-3 w-3 -translate-x-1/2 rounded-full bg-[#8b7bff] shadow-[0_0_16px_#8b7bff]" />
+            <span className="absolute -bottom-1.5 left-1/2 h-2.5 w-2.5 sm:h-3 sm:w-3 -translate-x-1/2 rounded-full bg-[#8b7bff] shadow-[0_0_16px_#8b7bff]" />
           </div>
           <div className="absolute inset-[26%] rounded-full border border-[#26262d] bg-[#0a0a0b]/60 backdrop-blur" />
           <div className="absolute inset-0 grid place-items-center">
             <div className="text-center">
-              <p className="font-display text-5xl font-extrabold md:text-6xl">1.6<span className="text-[#d6ff3f]">+</span></p>
-              <p className="mt-1 font-mono2 text-[10px] uppercase tracking-[0.3em] text-[#8b8b94]">Years in React</p>
+              <p className="font-display text-3xl sm:text-5xl font-extrabold md:text-6xl">1.6<span className="text-[#d6ff3f]">+</span></p>
+              <p className="mt-1 font-mono2 text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-[#8b8b94]">Years in React</p>
             </div>
           </div>
           {STACK.slice(0, 8).map((s, i) => {
             const Icon = ICONS[i % ICONS.length];
             const angle = (i / 8) * Math.PI * 2 - Math.PI / 2;
-            const x = 50 + 44 * Math.cos(angle);
-            const y = 50 + 44 * Math.sin(angle);
+            const x = 50 + 40 * Math.cos(angle);
+            const y = 50 + 40 * Math.sin(angle);
             return (
               <div
                 key={s.name}
-                className="orb absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1.5"
+                className="orb absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1"
                 style={{ left: `${x}%`, top: `${y}%` }}
               >
-                <span className="grid h-14 w-14 place-items-center rounded-2xl border border-[#2e2e36] bg-[#0a0a0b] text-[#d6ff3f] shadow-xl transition-transform hover:scale-110 md:h-16 md:w-16">
-                  <Icon size={22} />
+                <span className="grid h-10 w-10 sm:h-14 sm:w-14 place-items-center rounded-xl sm:rounded-2xl border border-[#2e2e36] bg-[#0a0a0b] text-[#d6ff3f] shadow-xl transition-transform hover:scale-110 md:h-16 md:w-16">
+                  <Icon size={18} className="sm:hidden" />
+                  <Icon size={22} className="hidden sm:block" />
                 </span>
-                <span className="whitespace-nowrap rounded-full bg-black/70 px-2.5 py-1 font-mono2 text-[9px] uppercase tracking-widest text-white backdrop-blur">
+                <span className="hidden sm:inline-block whitespace-nowrap rounded-full bg-black/80 px-2 py-0.5 font-mono2 text-[8px] sm:text-[9px] uppercase tracking-wider text-white backdrop-blur">
                   {s.name}
                 </span>
               </div>
@@ -83,20 +84,20 @@ export default function Stack() {
 
         {/* Bars + extras */}
         <div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3.5 sm:gap-4">
             {STACK.map((s) => (
-              <div key={s.name} className="group flex items-center gap-4">
-                <span className="w-36 shrink-0 truncate font-mono2 text-[11px] uppercase tracking-[0.15em] text-[#b9b9c2] md:w-44">
+              <div key={s.name} className="group flex items-center gap-2.5 sm:gap-4">
+                <span className="w-28 sm:w-36 md:w-44 shrink-0 truncate font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.12em] sm:tracking-[0.15em] text-[#b9b9c2]">
                   {s.name}
                 </span>
-                <div className="h-2 flex-1 overflow-hidden rounded-full bg-[#26262d]">
+                <div className="h-1.5 sm:h-2 flex-1 overflow-hidden rounded-full bg-[#26262d]">
                   <div
                     className="skill-fill h-full origin-left rounded-full bg-gradient-to-r from-[#8b7bff] via-[#4ade80] to-[#d6ff3f]"
                     data-level={s.level}
                     style={{ transform: "scaleX(0)" }}
                   />
                 </div>
-                <span className="w-10 text-right font-mono2 text-xs text-[#8b8b94]">{s.level}</span>
+                <span className="w-8 sm:w-10 text-right font-mono2 text-[11px] sm:text-xs text-[#8b8b94]">{s.level}</span>
               </div>
             ))}
           </div>

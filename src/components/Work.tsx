@@ -47,15 +47,15 @@ export function SectionHead({
   return (
     <div ref={ref} className="mx-auto mb-10 max-w-[1500px] px-5 md:mb-14 md:px-10">
       <div className="sh-fade mb-4 flex items-center gap-3">
-        <span className="rounded-full border border-[#d6ff3f]/40 bg-[#d6ff3f]/10 px-3 py-1 font-mono2 text-[11px] tracking-[0.25em] text-[#d6ff3f]">
+        <span className="whitespace-nowrap rounded-full border border-[#d6ff3f]/40 bg-[#d6ff3f]/10 px-3 py-1 font-mono2 text-[10px] sm:text-[11px] tracking-[0.2em] text-[#d6ff3f]">
           {num}
         </span>
         {hint && (
-          <span className="font-mono2 text-[11px] uppercase tracking-[0.25em] text-[#8b8b94]">{hint}</span>
+          <span className="font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#8b8b94]">{hint}</span>
         )}
         <span className="h-px flex-1 bg-[#26262d]" />
       </div>
-      <h2 className="font-display text-4xl font-extrabold leading-[1.02] tracking-tight md:text-6xl">
+      <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight">
         <span className="sh-line mask-line"><span>{typeof title === "string" ? title : title}</span></span>
       </h2>
     </div>
@@ -149,33 +149,33 @@ function ProjectCard({
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent opacity-80" />
-        <div className="absolute left-5 top-5 flex gap-2">
+        <div className="absolute left-3 top-3 sm:left-5 sm:top-5 flex flex-wrap gap-1.5 sm:gap-2 max-w-[85%]">
           {p.tags.slice(0, 3).map((t) => (
-            <span key={t} className="rounded-full bg-black/55 px-3 py-1.5 font-mono2 text-[10px] uppercase tracking-[0.15em] text-white backdrop-blur-md">
+            <span key={t} className="rounded-full bg-black/60 px-2.5 py-1 sm:px-3 sm:py-1.5 font-mono2 text-[9px] sm:text-[10px] uppercase tracking-[0.12em] text-white backdrop-blur-md whitespace-nowrap">
               {t}
             </span>
           ))}
         </div>
-        <div className="absolute bottom-5 right-5 grid h-14 w-14 place-items-center rounded-full bg-[#d6ff3f] text-black opacity-0 transition-all duration-500 group-hover:opacity-100 scale-75 group-hover:scale-100">
-          <ArrowUpRight size={22} />
+        <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5 grid h-11 w-11 sm:h-14 sm:w-14 place-items-center rounded-full bg-[#d6ff3f] text-black opacity-0 transition-all duration-500 group-hover:opacity-100 scale-75 group-hover:scale-100">
+          <ArrowUpRight size={20} />
         </div>
-        <span className="absolute bottom-5 left-5 font-display text-6xl font-extrabold text-white/25">{p.index}</span>
+        <span className="absolute bottom-3 left-4 sm:bottom-5 sm:left-5 font-display text-4xl sm:text-6xl font-extrabold text-white/20">{p.index}</span>
       </button>
 
       <div className="wc-title">
-        <p className="mb-2 font-mono2 text-[11px] uppercase tracking-[0.25em]" style={{ color: p.accent }}>
+        <p className="mb-2 font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.2em]" style={{ color: p.accent }}>
           {p.index} — {p.year} · {p.role}
         </p>
-        <h3 className="font-display text-3xl font-extrabold leading-tight md:text-5xl">
+        <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
           {p.title}
           <span className="text-[#d6ff3f]">.</span>
         </h3>
-        <p className="mt-2 text-base text-[#8b8b94] md:text-lg">{p.subtitle}</p>
-        <p className="mt-4 max-w-lg leading-relaxed text-[#b9b9c2]">{p.description.slice(0, 160)}…</p>
-        <div className="mt-6 flex flex-wrap items-center gap-3">
+        <p className="mt-1.5 sm:mt-2 text-sm sm:text-base md:text-lg text-[#8b8b94]">{p.subtitle}</p>
+        <p className="mt-3 sm:mt-4 max-w-lg text-sm sm:text-base leading-relaxed text-[#b9b9c2]">{p.description.slice(0, 160)}…</p>
+        <div className="mt-5 sm:mt-6 flex flex-wrap items-center gap-2.5 sm:gap-3">
           <button
             onClick={() => onOpen(p)}
-            className="group/btn flex items-center gap-2 rounded-full bg-[#f2f1ea] px-6 py-3 text-[13px] font-bold uppercase tracking-wider text-black transition-colors hover:bg-[#d6ff3f]"
+            className="group/btn flex items-center gap-2 rounded-full bg-[#f2f1ea] px-5 py-2.5 sm:px-6 sm:py-3 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-black transition-colors hover:bg-[#d6ff3f]"
           >
             Case study
             <ArrowUpRight size={15} className="transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
@@ -184,11 +184,11 @@ function ProjectCard({
             href={p.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-full border border-[#2e2e36] px-5 py-3 text-[13px] font-bold uppercase tracking-wider text-white transition-all hover:border-[#d6ff3f] hover:text-[#d6ff3f]"
+            className="flex items-center gap-2 rounded-full border border-[#2e2e36] px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white transition-all hover:border-[#d6ff3f] hover:text-[#d6ff3f]"
           >
             Live Demo ↗
           </a>
-          <span className="font-mono2 text-[11px] uppercase tracking-[0.2em] text-[#8b8b94]">{p.year}</span>
+          <span className="font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#8b8b94]">{p.year}</span>
         </div>
       </div>
     </article>
@@ -203,16 +203,16 @@ export default function Work({ onOpen }: { onOpen: (p: Project) => void }) {
   );
 
   return (
-    <section id="work" className="relative py-24 md:py-32">
+    <section id="work" className="relative py-20 sm:py-24 md:py-32">
       <SectionHead num="( 01 )" hint="Flagship Production Systems" title={<>Work that ships<span className="text-[#d6ff3f]">,</span> code that <span className="text-stroke">performs.</span></>} />
 
       {/* Filter tabs */}
-      <div className="mx-auto mb-14 flex max-w-[1500px] flex-wrap items-center gap-2 px-5 md:px-10">
+      <div className="mx-auto mb-10 sm:mb-14 flex max-w-[1500px] flex-wrap items-center gap-2 px-5 md:px-10">
         {filters.map((f) => (
           <button
             key={f}
             onClick={() => setFilter(f)}
-            className={`rounded-full px-5 py-2 font-mono2 text-xs uppercase tracking-[0.18em] transition-all ${
+            className={`rounded-full px-4 py-1.5 sm:px-5 sm:py-2 font-mono2 text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.18em] transition-all ${
               filter === f
                 ? "bg-[#d6ff3f] text-black font-semibold"
                 : "border border-[#2e2e36] text-[#8b8b94] hover:border-[#d6ff3f] hover:text-white"

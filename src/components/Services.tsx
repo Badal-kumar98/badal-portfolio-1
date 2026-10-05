@@ -95,10 +95,10 @@ export default function Services() {
               <div key={s.id} className={`svc-row border-b border-[#26262d] last:border-0 ${open ? "bg-[#131316]" : "bg-[#0a0a0b]"}`}>
                 <button
                   onClick={() => setActive(open ? -1 : i)}
-                  className="flex w-full items-center gap-4 px-6 py-6 text-left md:gap-8 md:px-10 md:py-8"
+                  className="flex w-full items-center gap-3 px-4 py-5 text-left sm:gap-4 md:gap-8 md:px-10 md:py-8"
                 >
                   <span className={`font-mono2 text-xs md:text-sm ${open ? "text-[#d6ff3f]" : "text-[#8b8b94]"}`}>{s.id}</span>
-                  <span className={`flex-1 font-display text-2xl font-extrabold tracking-tight transition-colors md:text-4xl ${open ? "text-white" : "text-[#6d6d77]"}`}>
+                  <span className={`flex-1 font-display text-lg sm:text-2xl font-extrabold tracking-tight transition-colors md:text-4xl ${open ? "text-white" : "text-[#6d6d77]"}`}>
                     {s.title}
                   </span>
                   <span className="hidden gap-2 md:flex">
@@ -108,8 +108,8 @@ export default function Services() {
                       </span>
                     ))}
                   </span>
-                  <span className={`grid h-11 w-11 shrink-0 place-items-center rounded-full border transition-all duration-500 ${open ? "rotate-45 border-[#d6ff3f] bg-[#d6ff3f] text-black" : "border-[#2e2e36] text-white"}`}>
-                    <ArrowUpRight size={18} className={open ? "rotate-90" : ""} />
+                  <span className={`grid h-9 w-9 sm:h-11 sm:w-11 shrink-0 place-items-center rounded-full border transition-all duration-500 ${open ? "rotate-45 border-[#d6ff3f] bg-[#d6ff3f] text-black" : "border-[#2e2e36] text-white"}`}>
+                    <ArrowUpRight size={16} className={open ? "rotate-90" : ""} />
                   </span>
                 </button>
                 <div

@@ -55,27 +55,27 @@ export default function Contact() {
       <div className="contact-grid mx-auto grid max-w-[1500px] gap-5 px-5 md:px-10 lg:grid-cols-[1fr_1.15fr]">
         {/* left info */}
         <div className="flex flex-col gap-5">
-          <div className="contact-card rounded-3xl border border-[#26262d] bg-[#131316] p-7 md:p-8">
-            <p className="font-mono2 text-[11px] uppercase tracking-[0.25em] text-[#8b8b94]">Direct email</p>
-            <button onClick={copyEmail} className="group mt-3 flex w-full items-center justify-between gap-3 text-left">
-              <span className="break-all font-display text-xl font-bold text-white transition-colors group-hover:text-[#d6ff3f] md:text-2xl">
+          <div className="contact-card rounded-3xl border border-[#26262d] bg-[#131316] p-5 sm:p-7 md:p-8">
+            <p className="font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#8b8b94]">Direct email</p>
+            <button onClick={copyEmail} className="group mt-3 flex w-full items-center justify-between gap-2.5 text-left">
+              <span className="font-display text-base sm:text-xl md:text-2xl font-bold text-white transition-colors group-hover:text-[#d6ff3f] truncate">
                 {PROFILE.email}
               </span>
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-[#2e2e36] text-[#8b8b94] transition-all group-hover:border-[#d6ff3f] group-hover:text-[#d6ff3f]">
+              <span className="grid h-10 w-10 sm:h-11 sm:w-11 shrink-0 place-items-center rounded-full border border-[#2e2e36] text-[#8b8b94] transition-all group-hover:border-[#d6ff3f] group-hover:text-[#d6ff3f]">
                 {copied ? <CheckCircle2 size={17} className="text-[#4ade80]" /> : <Copy size={16} />}
               </span>
             </button>
-            <p className={`mt-2 font-mono2 text-xs transition-opacity ${copied ? "text-[#4ade80] opacity-100" : "opacity-0"}`}>
+            <p className={`mt-1.5 font-mono2 text-[11px] sm:text-xs transition-opacity ${copied ? "text-[#4ade80] opacity-100" : "opacity-0"}`}>
               Copied to clipboard ✓
             </p>
 
             <div className="mt-4 border-t border-[#26262d] pt-4">
-              <p className="font-mono2 text-[11px] uppercase tracking-[0.25em] text-[#8b8b94]">Phone & Location</p>
-              <p className="mt-1 font-display text-lg font-bold text-white">{PROFILE.phone}</p>
-              <p className="mt-0.5 text-sm text-[#8b8b94]">{PROFILE.location}</p>
+              <p className="font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#8b8b94]">Phone & Location</p>
+              <p className="mt-1 font-display text-base sm:text-lg font-bold text-white">{PROFILE.phone}</p>
+              <p className="mt-0.5 text-xs sm:text-sm text-[#8b8b94]">{PROFILE.location}</p>
             </div>
 
-            <div className="mt-5 flex gap-2.5">
+            <div className="mt-5 flex gap-2 sm:gap-2.5">
               {[
                 { icon: Github, label: "GitHub", href: PROFILE.github },
                 { icon: Linkedin, label: "LinkedIn", href: PROFILE.linkedin },
@@ -88,21 +88,21 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="grid h-12 w-12 place-items-center rounded-2xl border border-[#2e2e36] text-[#b9b9c2] transition-all duration-300 hover:-translate-y-1 hover:border-[#d6ff3f] hover:bg-[#d6ff3f] hover:text-black"
+                  className="grid h-10 w-10 sm:h-12 sm:w-12 place-items-center rounded-2xl border border-[#2e2e36] text-[#b9b9c2] transition-all duration-300 hover:-translate-y-1 hover:border-[#d6ff3f] hover:bg-[#d6ff3f] hover:text-black"
                 >
-                  <s.icon size={18} />
+                  <s.icon size={17} />
                 </a>
               ))}
             </div>
           </div>
 
-          <div className="contact-card rounded-3xl border border-[#26262d] bg-[#131316] p-7 md:p-8">
-            <p className="font-mono2 text-[11px] uppercase tracking-[0.25em] text-[#d6ff3f]">Availability</p>
-            <h4 className="mt-2 font-display text-2xl font-bold text-white">Full-Time Engineering Roles</h4>
-            <p className="mt-3 text-sm leading-relaxed text-[#b9b9c2]">
+          <div className="contact-card rounded-3xl border border-[#26262d] bg-[#131316] p-5 sm:p-7 md:p-8">
+            <p className="font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#d6ff3f]">Availability</p>
+            <h4 className="mt-2 font-display text-xl sm:text-2xl font-bold text-white">Full-Time Engineering Roles</h4>
+            <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm leading-relaxed text-[#b9b9c2]">
               Looking for frontend developer roles in Delhi NCR (Noida, Gurugram, Delhi) or remote. Ready to build high-performance React applications and enterprise UI systems.
             </p>
-            <div className="mt-5 flex items-center gap-3 font-mono2 text-xs text-[#8b8b94]">
+            <div className="mt-4 sm:mt-5 flex items-center gap-2.5 font-mono2 text-[11px] sm:text-xs text-[#8b8b94]">
               <span className="h-2 w-2 rounded-full bg-[#4ade80] animate-pulse" /> Notice Period: Available Soon / Flexible
             </div>
           </div>

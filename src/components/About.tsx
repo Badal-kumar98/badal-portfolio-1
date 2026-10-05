@@ -93,42 +93,42 @@ export default function About() {
 
       <div className="mx-auto grid max-w-[1500px] gap-12 px-5 md:px-10 lg:grid-cols-[1fr_1fr]">
         <div>
-          <p className="about-statement font-display text-2xl font-bold leading-snug md:text-[2rem]">
+          <p className="about-statement font-display text-xl sm:text-2xl font-bold leading-snug md:text-[2rem]">
             I build frontend applications that solve real business problems — blending{" "}
             <span className="text-[#d6ff3f]">React architecture</span> with{" "}
-            <span className="text-stroke">TypeScript type safety</span> to create fast, resilient user workflows.
+            <span className="text-white underline decoration-[#8b7bff] decoration-2 underline-offset-4">TypeScript type safety</span> to create fast, resilient user workflows.
           </p>
-          <p className="mt-6 max-w-xl leading-relaxed text-[#b9b9c2]">
+          <p className="mt-5 sm:mt-6 max-w-xl text-sm sm:text-base leading-relaxed text-[#b9b9c2]">
             Based in Delhi NCR, I work as a Frontend Developer at Koncept Software Solutions. Over the past 1.6+ years, I have architected and shipped frontends across 12+ production client web apps and SaaS platforms in FinTech, LegalTech, E-Commerce, and Industrial Operations — taking Figma designs into pixel-perfect, accessible component systems.
           </p>
 
-          <div className="mt-8 grid grid-cols-3 gap-3">
+          <div className="mt-7 sm:mt-8 grid grid-cols-3 gap-2.5 sm:gap-3">
             {[
               { v: 12, l: "Projects shipped", s: "+" },
               { v: 10, l: "Client portals", s: "+" },
               { v: 95, l: "Mobile Lighthouse", s: "+" },
             ].map((c) => (
-              <div key={c.l} className="rounded-2xl border border-[#2e2e36] bg-[#0a0a0b] p-5 text-center">
-                <p className="font-display text-3xl font-extrabold text-[#d6ff3f] md:text-4xl">
+              <div key={c.l} className="rounded-2xl border border-[#2e2e36] bg-[#0a0a0b] p-3.5 sm:p-5 text-center">
+                <p className="font-display text-2xl font-extrabold text-[#d6ff3f] sm:text-3xl md:text-4xl">
                   <span data-count={c.v}>0</span>{c.s}
                 </p>
-                <p className="mt-1 font-mono2 text-[10px] uppercase tracking-[0.2em] text-[#8b8b94]">{c.l}</p>
+                <p className="mt-1 font-mono2 text-[9px] sm:text-[10px] uppercase tracking-[0.16em] sm:tracking-[0.2em] text-[#8b8b94]">{c.l}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3">
             <a
               ref={dlRef}
               data-magnetic
               href="/badal_kumar_resume.html"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full bg-[#d6ff3f] px-6 py-3 text-[13px] font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.03]"
+              className="flex items-center justify-center gap-2 rounded-full bg-[#d6ff3f] px-5 py-3 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.03]"
             >
               <Download size={15} /> View / Download Résumé
             </a>
-            <span className="flex items-center gap-2 rounded-full border border-[#2e2e36] px-6 py-3 font-mono2 text-[11px] uppercase tracking-[0.2em] text-[#8b8b94]">
+            <span className="flex items-center justify-center gap-2 rounded-full border border-[#2e2e36] px-5 py-3 font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.16em] sm:tracking-[0.2em] text-[#8b8b94]">
               <GraduationCap size={15} /> BCA · IGNOU (Pursuing)
             </span>
           </div>
@@ -136,7 +136,7 @@ export default function About() {
 
         <div className="flex flex-col gap-6">
           <div className="studio-img card-sheen relative aspect-[16/10] overflow-hidden rounded-3xl border border-[#26262d]">
-            <img src="/images/portrait.jpg" alt="Badal Kumar" className="h-full w-full object-cover" />
+            <img src="/images/studio.jpg" alt="Developer Workspace" className="h-full w-full object-cover" />
             <div className="absolute bottom-4 left-4 rounded-full bg-black/60 px-4 py-2 font-mono2 text-[10px] uppercase tracking-[0.2em] text-white backdrop-blur">
               Delhi NCR, India
             </div>

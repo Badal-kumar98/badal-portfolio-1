@@ -27,12 +27,12 @@ export default function Footer() {
     <footer ref={root} className="relative border-t border-[#26262d] bg-[#08080a]">
       <div className="mx-auto max-w-[1500px] px-5 pb-8 pt-14 md:px-10">
         <div className="foot-big overflow-hidden">
-          <p className="whitespace-nowrap text-center font-display text-[12.5vw] font-extrabold leading-none tracking-tight text-[#1d1d23] transition-colors duration-700 hover:text-[#d6ff3f] md:text-[10vw]">
+          <p className="whitespace-nowrap text-center font-display text-[8.5vw] sm:text-[9.5vw] md:text-[10vw] font-extrabold leading-none tracking-tight text-[#1d1d23] transition-colors duration-700 hover:text-[#d6ff3f]">
             BADAL KUMAR
           </p>
         </div>
 
-        <div className="mt-10 grid gap-8 border-t border-[#26262d] pt-8 md:grid-cols-4">
+        <div className="mt-10 grid gap-8 border-t border-[#26262d] pt-8 sm:grid-cols-2 md:grid-cols-4">
           <div>
             <div className="flex items-center gap-2">
               <span className="grid h-9 w-9 place-items-center rounded-full bg-[#d6ff3f] font-display text-sm font-extrabold text-black">BK</span>
