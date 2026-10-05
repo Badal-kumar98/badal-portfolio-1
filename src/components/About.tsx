@@ -136,7 +136,7 @@ export default function About() {
 
         <div className="flex flex-col gap-6">
           <div className="studio-img card-sheen relative aspect-[16/10] overflow-hidden rounded-3xl border border-[#26262d]">
-            <img src="/images/studio.jpg" alt="Developer Workspace" className="h-full w-full object-cover" />
+            <img src="./images/studio.jpg" alt="Developer Workspace" className="h-full w-full object-cover" />
             <div className="absolute bottom-4 left-4 rounded-full bg-black/60 px-4 py-2 font-mono2 text-[10px] uppercase tracking-[0.2em] text-white backdrop-blur">
               Delhi NCR, India
             </div>

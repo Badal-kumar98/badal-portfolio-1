@@ -131,7 +131,7 @@ export default function Hero({ ready }: { ready: boolean }) {
         {/* RIGHT — portrait */}
         <div className="relative mx-auto flex w-full max-w-sm sm:max-w-md flex-col gap-5 lg:mx-0 lg:max-w-none">
           <div className="hero-img-wrap card-sheen relative aspect-[3/4] w-full overflow-hidden rounded-3xl border border-[#26262d] lg:mt-2" data-cursor="view">
-            <img src="/images/portrait.jpg" alt="Badal Kumar portrait" className="h-full w-full object-cover object-top" />
+            <img src="./images/portrait.jpg" alt="Badal Kumar portrait" className="h-full w-full object-cover object-top" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between p-5">
               <div>
