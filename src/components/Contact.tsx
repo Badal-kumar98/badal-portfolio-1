@@ -127,7 +127,7 @@ export default function Contact() {
                 <input
                   required
                   type="text"
-                  placeholder="e.g. Rahul Sharma"
+                  placeholder="Badal Kumar"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   className={inputCls}
