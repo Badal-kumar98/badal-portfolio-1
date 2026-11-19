@@ -82,8 +82,8 @@ export default function Footer() {
                 <ArrowUp size={15} />
               </span>
             </button>
-            <p className="flex items-center gap-1.5 font-mono2 text-[11px] text-[#55555e]">
-              Built with React + GSAP · Made with <Heart size={12} className="fill-[#d6ff3f] text-[#d6ff3f]" /> in India
+            <p className="flex items-center gap-1.5 font-mono2 text-[11px] text-[#8b8b94]">
+              Designed & Engineered end-to-end by Badal Kumar · New Delhi, India
             </p>
           </div>
         </div>
