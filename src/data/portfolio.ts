@@ -8,7 +8,7 @@ export const PROFILE = {
   availability: "Open for Full-time Roles",
   years: "1.5+",
   projects: "20+",
-  crmsCount: "6",
+  crmsCount: "7",
   lighthouse: "95+",
   github: "https://github.com/Badal-kumar98",
   linkedin: "https://linkedin.com/in/badal-kumar-200b45324",
@@ -21,7 +21,7 @@ export type Project = {
   index: string;
   title: string;
   subtitle: string;
-  category: "crm" | "client";
+  category: "client";
   image: string;
   tags: string[];
   year: string;
@@ -31,133 +31,32 @@ export type Project = {
   outcome: { value: string; label: string }[];
   accent: string;
   liveUrl: string;
-  isProtected?: boolean;
 };
 
-export const PROJECTS: Project[] = [
-  // ==================== ENTERPRISE CRMs (PROTECTED B2B) ====================
-  {
-    id: "munafa",
-    index: "01",
-    title: "Munafa CRM",
-    subtitle: "Multi-tenant enterprise SaaS CRM & automated GST billing suite",
-    category: "crm",
-    image: "./images/munafa-dashboard.png",
-    tags: ["Enterprise CRM", "React", "TypeScript", "Node.js", "Express", "MongoDB", "PayU"],
-    year: "2025 – 2026",
-    role: "Full Stack Architecture — UI & Multi-Tenancy",
-    stack: ["React.js", "TypeScript", "Node.js", "Express.js", "MongoDB", "Redux Toolkit", "PayU", "SheetJS"],
-    description:
-      "Architected a complete multi-tenant SaaS business suite with 10+ operational modules: Leads, Customers, Suppliers, Employees, Products, Invoices, Quotations, and Purchase Orders. Implemented tenant-aware dynamic routing (/:type/*) and role-based access control (RBAC), enabling a unified codebase to serve isolated tenants with subscription plan limits, automated PayU billing, dynamic GST invoice PDF generation, and SheetJS Excel exports.",
-    outcome: [
-      { value: "10+", label: "enterprise modules" },
-      { value: "500+", label: "monthly GST invoices" },
-      { value: "100%", label: "TypeScript coverage" },
-    ],
-    accent: "#38bdf8",
-    liveUrl: "https://koncept-invoice.pages.dev",
-    isProtected: true,
-  },
-  {
-    id: "sanscriti-crm",
-    index: "02",
-    title: "Sanscriti Electric CRM",
-    subtitle: "Commercial EV dealership operations & spare parts inventory CRM",
-    category: "crm",
-    image: "./images/project-sanscriti.png",
-    tags: ["Enterprise CRM", "React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-    year: "2025 – 2026",
-    role: "Full Stack Developer — Dealership Workflows & RBAC",
-    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "RESTful APIs"],
-    description:
-      "Engineered full-stack dealership management portal for electric commercial vehicles. Built field-technician job card flows, warranty verification by battery/motor serial number, spare parts inventory reconciliation, and multi-tier dealer hierarchy tracking with role-based access control.",
-    outcome: [
-      { value: "100%", label: "serial tracking" },
-      { value: "Role-based", label: "dealer gating" },
-      { value: "Real-time", label: "job cards" },
-    ],
-    accent: "#22c55e",
-    liveUrl: "https://sanscriti.pages.dev/login",
-    isProtected: true,
-  },
-  {
-    id: "crystalion-crm",
-    index: "03",
-    title: "Crystalion Engineers CRM",
-    subtitle: "Industrial quotation calculation engine & AMC renewal CRM",
-    category: "crm",
-    image: "./images/project-casestack.png",
-    tags: ["Enterprise CRM", "React", "TypeScript", "MongoDB", "REST APIs"],
-    year: "2025 – 2026",
-    role: "Frontend & Full Stack Integration",
-    stack: ["React.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB", "REST APIs"],
-    description:
-      "Designed and implemented industrial B2B operations software automating complex engineering quotations with GST breakdowns, RFP submission workflows, supplier price comparisons, and Annual Maintenance Contract (AMC) renewal alerts.",
-    outcome: [
-      { value: "Automated", label: "GST quotation calc" },
-      { value: "AMC", label: "renewal tracking" },
-      { value: "<250ms", label: "table rendering" },
-    ],
-    accent: "#eab308",
-    liveUrl: "https://crystalionengineers.pages.dev/login",
-    isProtected: true,
-  },
-  {
-    id: "neeravi-crm",
-    index: "04",
-    title: "Neeravi Solutions CRM",
-    subtitle: "Lead ingestion pipeline & client operations workflow CRM",
-    category: "crm",
-    image: "./images/munafa-dashboard.png",
-    tags: ["Enterprise CRM", "React", "Node.js", "Express", "MongoDB"],
-    year: "2025",
-    role: "Full Stack Engineer — Lead Lifecycle & Pipelines",
-    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Redux Toolkit", "REST APIs"],
-    description:
-      "Built centralized client management system featuring automated inquiry ingestion, stage-wise deal progression pipeline, task delegation matrix, Proforma Invoice (PI) generation, and communication logs for sales representatives.",
-    outcome: [
-      { value: "4-Stage", label: "deal pipeline" },
-      { value: "Automated", label: "PI generation" },
-      { value: "RBAC", label: "sales hierarchy" },
-    ],
-    accent: "#a855f7",
-    liveUrl: "https://neeravi-crm.pages.dev/",
-    isProtected: true,
-  },
-  {
-    id: "casestack",
-    index: "05",
-    title: "CaseStack",
-    subtitle: "Legal case diary & court hearing reminder CRM for law firms",
-    category: "crm",
-    image: "./images/project-casestack.png",
-    tags: ["Enterprise CRM", "LegalTech", "React", "TypeScript", "Node.js", "MongoDB"],
-    year: "2025 – 2026",
-    role: "Full Stack Engineer — Case Lifecycle & Document Vault",
-    stack: ["React.js", "TypeScript", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-    description:
-      "Engineered comprehensive case management CRM for advocates and corporate legal teams. Features client record indexing, court calendar scheduling, automated hearing notifications, and a secure case document repository.",
-    outcome: [
-      { value: "Daily", label: "cause list alerts" },
-      { value: "Zero-latency", label: "case search" },
-      { value: "Encrypted", label: "document vault" },
-    ],
-    accent: "#ec4899",
-    liveUrl: "https://casestack.in/",
-    isProtected: true,
-  },
+export interface EnterpriseCRM {
+  id: string;
+  name: string;
+  category: string;
+  badge: string;
+  stack: string[];
+  description: string;
+  portalUrl: string;
+  metrics: string;
+  status: string;
+}
 
-  // ==================== COMMERCIAL & CLIENT PLATFORMS ====================
+// ==================== COMMERCIAL CLIENT PLATFORMS (WITH REAL SCREENSHOTS) ====================
+export const PROJECTS: Project[] = [
   {
     id: "sugarbliss",
-    index: "06",
+    index: "01",
     title: "Sugarbliss",
-    subtitle: "Bespoke luxury keepsakes & gift hampers e-commerce platform",
+    subtitle: "Bespoke luxury keepsakes & artisanal gift hampers e-commerce platform",
     category: "client",
     image: "./images/project-sugarbliss.png",
-    tags: ["E-Commerce", "React", "TypeScript", "Redux Toolkit", "Tailwind CSS", "Vite"],
+    tags: ["E-Commerce", "React", "TypeScript", "Redux Toolkit", "Tailwind CSS"],
     year: "2025 – 2026",
-    role: "Frontend Engineer — E-Commerce & Customizer",
+    role: "Frontend Engineer — Customizer & E-Commerce",
     stack: ["React.js", "TypeScript", "Redux Toolkit", "Tailwind CSS", "Vite", "Cloudflare Pages"],
     description:
       "Engineered luxury gifting e-commerce platform featuring an interactive polaroid surprise box and custom keepsake hamper builder. Implemented stateful cart and checkout with Redux Toolkit, Pan-India delivery slot serviceability checks, and fluid micro-interactions delivering a premium, conversion-optimized shopping experience.",
@@ -166,19 +65,19 @@ export const PROJECTS: Project[] = [
       { value: "Sub-sec", label: "cart state updates" },
       { value: "Pan-India", label: "delivery check" },
     ],
-    accent: "#f472b6",
+    accent: "#d6ff3f",
     liveUrl: "https://sugarbliss.com.co",
   },
   {
     id: "drivora",
-    index: "07",
+    index: "02",
     title: "Drivora",
     subtitle: "Professional on-demand & monthly driver booking platform",
     category: "client",
     image: "./images/project-drivora.png",
-    tags: ["Booking Platform", "React", "TypeScript", "Tailwind CSS", "REST APIs", "Google Maps"],
+    tags: ["Mobility Platform", "React", "TypeScript", "Google Maps", "REST APIs"],
     year: "2025 – 2026",
-    role: "Full Stack Engineer — Booking & Onboarding",
+    role: "Full Stack Engineer — Booking Engine & Funnels",
     stack: ["React.js", "TypeScript", "Tailwind CSS", "Node.js", "RESTful APIs", "Google Maps API"],
     description:
       "Built customer booking portal for on-demand and monthly verified drivers with service tier selection (City/Outstation/Daily), real-time distance and fare estimation, driver onboarding funnel, and automated WhatsApp/email booking confirmation workflows.",
@@ -187,19 +86,19 @@ export const PROJECTS: Project[] = [
       { value: "Real-time", label: "fare calculation" },
       { value: "<200ms", label: "API response" },
     ],
-    accent: "#34d399",
+    accent: "#d6ff3f",
     liveUrl: "https://drivora.co.in",
   },
   {
     id: "legalpapers",
-    index: "08",
+    index: "03",
     title: "Legal Papers India",
-    subtitle: "Automated legal document drafting & e-stamp fulfillment portal",
+    subtitle: "Automated legal document drafting & online e-stamp fulfillment portal",
     category: "client",
     image: "./images/project-legalpapers.png",
-    tags: ["LegalTech", "React", "TypeScript", "Tailwind CSS", "REST APIs", "jsPDF"],
+    tags: ["LegalTech", "React", "TypeScript", "jsPDF", "Tailwind CSS"],
     year: "2025 – 2026",
-    role: "Full Stack Engineer — Workflows & Document Engine",
+    role: "Full Stack Engineer — Document Generation Engine",
     stack: ["React.js", "TypeScript", "Tailwind CSS", "Node.js", "Express", "jsPDF", "REST APIs"],
     description:
       "Developed legal-tech customer portal for automated legal document drafting, affidavits, and online stamp paper fulfillment. Built step-by-step document questionnaires with dynamic input validation, client-side PDF preview using jsPDF, and an order fulfillment pipeline.",
@@ -208,12 +107,12 @@ export const PROJECTS: Project[] = [
       { value: "Automated", label: "PDF generation" },
       { value: "Instant", label: "stamp paper tracking" },
     ],
-    accent: "#f59e0b",
+    accent: "#d6ff3f",
     liveUrl: "https://www.legalpapersindia.in",
   },
   {
     id: "sanscriti",
-    index: "09",
+    index: "04",
     title: "Sanscriti Electric",
     subtitle: "Commercial EV mobility corporate portal & interactive product showcase",
     category: "client",
@@ -229,19 +128,19 @@ export const PROJECTS: Project[] = [
       { value: "Enterprise", label: "fleet security" },
       { value: "95+", label: "mobile performance" },
     ],
-    accent: "#10b981",
+    accent: "#d6ff3f",
     liveUrl: "https://sanscritielectric.com",
   },
   {
     id: "algotipp",
-    index: "10",
+    index: "05",
     title: "AlgoTipp",
     subtitle: "Real-time consultation platform with live video, audio & WebSockets",
     category: "client",
     image: "./images/project-algotipp.png",
-    tags: ["Real-Time", "React", "Agora RTC SDK", "WebSockets", "Redux Toolkit", "PayU"],
+    tags: ["Real-Time", "React", "Agora RTC SDK", "WebSockets", "PayU"],
     year: "2025",
-    role: "Frontend Developer — Real-Time Media & SDKs",
+    role: "Frontend Developer — Media SDKs & WebSockets",
     stack: ["React.js", "Agora RTC SDK", "WebSockets", "Redux Toolkit", "PayU", "Vite"],
     description:
       "Implemented 1-on-1 real-time video and audio consultation sessions for an international client using the Agora RTC SDK, handling microphone/camera track initialization, device permissions, and network disconnect recovery states. Built real-time WebSocket chat rooms with consultation session timers, plus authenticated User, Analyst, and SuperAdmin dashboards with PayU wallet top-ups.",
@@ -255,14 +154,14 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "neerajbooks",
-    index: "11",
+    index: "06",
     title: "Neeraj Books",
     subtitle: "High-volume academic e-commerce bookstore serving 10,000+ publications",
     category: "client",
     image: "./images/project-neeraj.png",
-    tags: ["E-Commerce", "React", "Redux Toolkit", "PayU", "Tailwind CSS", "Vite"],
+    tags: ["E-Commerce", "React", "Redux Toolkit", "PayU", "Tailwind CSS"],
     year: "2025",
-    role: "Frontend Engineer — Catalog & E-Commerce",
+    role: "Frontend Engineer — E-Commerce & Canvas PDF Reader",
     stack: ["React.js", "Redux Toolkit", "React Router v6", "PayU", "Tailwind CSS", "Vite"],
     description:
       "Built a high-performance e-commerce storefront for a 75-year-old publishing house serving catalogs of 10,000+ university publications, solved assignments, and guides. Implemented persistent cart state, PayU payment checkout, real-time order tracking, and in-browser canvas PDF reading.",
@@ -271,12 +170,12 @@ export const PROJECTS: Project[] = [
       { value: "PayU", label: "payment checkout" },
       { value: "In-browser", label: "PDF viewer" },
     ],
-    accent: "#6366f1",
+    accent: "#d6ff3f",
     liveUrl: "https://www.neerajbooks.com/",
   },
   {
     id: "kitabstreet",
-    index: "12",
+    index: "07",
     title: "Kitab Street",
     subtitle: "Digital ebook storefront & academic multi-publisher marketplace",
     category: "client",
@@ -292,19 +191,19 @@ export const PROJECTS: Project[] = [
       { value: "Razorpay", label: "checkout pipeline" },
       { value: "Multi-vendor", label: "book listing" },
     ],
-    accent: "#ef4444",
+    accent: "#d6ff3f",
     liveUrl: "https://kitabstreet.com/",
   },
   {
     id: "tricity",
-    index: "13",
+    index: "08",
     title: "Tricity Engineers",
     subtitle: "Sustainable engineering, industrial blueprinting & EPC corporate portal",
     category: "client",
     image: "./images/project-tricity.png",
-    tags: ["Engineering", "React", "TypeScript", "Tailwind CSS", "Vite"],
+    tags: ["Industrial EPC", "React", "TypeScript", "Tailwind CSS", "Vite"],
     year: "2025 – 2026",
-    role: "Frontend Engineer — UI & Inquiries",
+    role: "Frontend Engineer — UI Architecture & Inquiries",
     stack: ["React.js", "TypeScript", "Tailwind CSS", "Vite", "Cloudflare Pages"],
     description:
       "Architected clean, modern corporate portal for sustainable engineering solutions. Includes project portfolio showcase, client testimonial carousels, custom RFP assessment requests, and mobile-first responsive performance.",
@@ -313,17 +212,17 @@ export const PROJECTS: Project[] = [
       { value: "Interactive", label: "RFP inquiry" },
       { value: "Responsive", label: "grid architecture" },
     ],
-    accent: "#84cc16",
+    accent: "#d6ff3f",
     liveUrl: "https://www.tricityengineers.in/",
   },
   {
     id: "unitedhoreca",
-    index: "14",
+    index: "09",
     title: "United Horeca",
     subtitle: "Commercial kitchen engineering & hospitality solutions portal",
     category: "client",
     image: "./images/project-unitedhoreca.png",
-    tags: ["Commercial Tech", "React", "TypeScript", "Tailwind CSS", "Vite"],
+    tags: ["Hospitality Tech", "React", "TypeScript", "Tailwind CSS", "Vite"],
     year: "2025 – 2026",
     role: "Frontend Developer — Catalog & Lead Capture",
     stack: ["React.js", "TypeScript", "Tailwind CSS", "Vite", "Cloudflare Pages"],
@@ -334,12 +233,12 @@ export const PROJECTS: Project[] = [
       { value: "Instant", label: "quote request" },
       { value: "Sub-second", label: "page transitions" },
     ],
-    accent: "#f97316",
+    accent: "#d6ff3f",
     liveUrl: "https://unitedhoreca.com/",
   },
   {
     id: "unitedinfra",
-    index: "15",
+    index: "10",
     title: "United Infra & Power",
     subtitle: "Infrastructure & power EPC solutions corporate showcase",
     category: "client",
@@ -355,8 +254,89 @@ export const PROJECTS: Project[] = [
       { value: "Industrial", label: "safety specs" },
       { value: "Fast", label: "Vite build" },
     ],
-    accent: "#06b6d4",
+    accent: "#d6ff3f",
     liveUrl: "https://unitedinfrapower.in/",
+  },
+];
+
+// ==================== ENTERPRISE CRMs (NAMES, HIGHLIGHTS & RBAC ACCESS) ====================
+export const ENTERPRISE_CRMS: EnterpriseCRM[] = [
+  {
+    id: "munafa",
+    name: "Munafa CRM",
+    category: "Multi-Tenant Enterprise SaaS & GST Billing Platform",
+    badge: "Flagship B2B SaaS",
+    stack: ["React.js", "TypeScript", "Node.js", "Express", "MongoDB", "Redux Toolkit", "PayU", "SheetJS"],
+    description: "Architected 10+ operational modules: Leads, Customers, Suppliers, Employees, Products, Invoices, Quotations, and Purchase Orders with tenant-aware routing (/:type/*), role-based access control (RBAC), PayU subscription billing, and automated GST invoice PDF export.",
+    portalUrl: "https://koncept-invoice.pages.dev",
+    metrics: "10+ Enterprise Modules · 500+ Monthly Invoices",
+    status: "Protected Staff Login",
+  },
+  {
+    id: "sanscriti-crm",
+    name: "Sanscriti Electric CRM",
+    category: "EV Dealership Operations & Inventory Management",
+    badge: "Dealership Operations",
+    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    description: "Engineered dealership management portal for electric commercial vehicles: field-technician job cards, battery/motor warranty verification by serial number, spare parts reconciliation, and dealer order tracking.",
+    portalUrl: "https://sanscriti.pages.dev/login",
+    metrics: "100% Serial Tracking · Multi-Tier Dealer Network",
+    status: "Dealership Login",
+  },
+  {
+    id: "crystalion-crm",
+    name: "Crystalion Engineers CRM",
+    category: "Industrial Quotations & AMC Service Ticketing",
+    badge: "Quotation & AMC Engine",
+    stack: ["React.js", "TypeScript", "Node.js", "MongoDB", "REST APIs"],
+    description: "Industrial B2B software automating itemized engineering quotations with GST breakdowns, RFP submission workflows, supplier price comparisons, and Annual Maintenance Contract (AMC) renewal alerts.",
+    portalUrl: "https://crystalionengineers.pages.dev/login",
+    metrics: "BOM Calculation Engine · AMC Alerts",
+    status: "Employee Login",
+  },
+  {
+    id: "neeravi-crm",
+    name: "Neeravi Solutions CRM",
+    category: "Lead Ingestion & Deal Progression Pipeline",
+    badge: "Pipeline Management",
+    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "Redux Toolkit"],
+    description: "Centralized client management system featuring automated inquiry ingestion, 4-stage deal progression matrix, task delegation matrix, and automated Proforma Invoice (PI) generation.",
+    portalUrl: "https://neeravi-crm.pages.dev/login",
+    metrics: "4-Stage Pipeline · Automated PI Engine",
+    status: "Internal CRM",
+  },
+  {
+    id: "casestack",
+    name: "CaseStack",
+    category: "Smart Case Diary & Hearing Reminder System",
+    badge: "Legal Practice Portal",
+    stack: ["React.js", "TypeScript", "Node.js", "Express", "MongoDB"],
+    description: "Legal case management CRM for advocates and law firms: client record indexing, court calendar scheduling, automated hearing notifications, and encrypted document vault.",
+    portalUrl: "https://casestack.in",
+    metrics: "Cause List Indexing · Encrypted Vault",
+    status: "Advocate Portal",
+  },
+  {
+    id: "udcd",
+    name: "UDCD Legal Court Diary",
+    category: "Court Hearing Reminders & VC Link Router",
+    badge: "Court Telemetry Suite",
+    stack: ["React.js", "Cloudflare Pages", "REST APIs", "Tailwind CSS"],
+    description: "Digital court diary for advocates indexing cases by date (/diary/:date), court scraper telemetry, and automated High Court / District Court virtual court (VC) video conference link routing.",
+    portalUrl: "https://udcd-android-app.pages.dev",
+    metrics: "Scraper Telemetry · Automated VC Routing",
+    status: "Advocate Portal",
+  },
+  {
+    id: "vrd-crm",
+    name: "VRD CRM",
+    category: "Enterprise Operations & Bulk Ingestion Pipeline",
+    badge: "Workforce Operations",
+    stack: ["React.js", "Node.js", "Express.js", "MongoDB", "SheetJS"],
+    description: "Enterprise operations suite with bulk employee Excel/CSV ingestion via SheetJS and automated lead-to-tax-invoice creation workflows.",
+    portalUrl: "https://vrd-crm.pages.dev",
+    metrics: "SheetJS Bulk Ingestion · Tax Invoice Flow",
+    status: "Company Only",
   },
 ];
 
