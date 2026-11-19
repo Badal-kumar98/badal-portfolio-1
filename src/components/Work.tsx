@@ -78,51 +78,43 @@ function ProjectCard({
     if (!el) return;
     const ctx = gsap.context(() => {
       gsap.fromTo(
-        ".reveal-img",
-        { clipPath: "inset(12% 8% 12% 8% round 24px)", scale: 0.96 },
+        ".reveal-card",
+        { opacity: 0, y: 35 },
         {
-          clipPath: "inset(0% 0% 0% 0% round 24px)",
-          scale: 1,
-          ease: "none",
-          scrollTrigger: { trigger: el, start: "top 90%", end: "top 35%", scrub: 1 },
-        }
-      );
-      gsap.fromTo(
-        ".reveal-img img",
-        { scale: 1.35 },
-        {
-          scale: 1.05,
-          ease: "none",
-          scrollTrigger: { trigger: el, start: "top 90%", end: "top 35%", scrub: 1 },
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 88%" },
         }
       );
       gsap.fromTo(
         ".wc-title",
-        { y: 70, opacity: 0 },
+        { y: 40, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 1,
-          ease: "power4.out",
-          scrollTrigger: { trigger: el, start: "top 78%" },
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 85%" },
         }
       );
     }, el);
     return () => ctx.revert();
   }, []);
 
-  // 3D tilt on hover
+  // 3D subtle tilt on hover
   useEffect(() => {
     const el = card.current;
-    const img = el?.querySelector(".reveal-img");
+    const img = el?.querySelector(".reveal-card");
     if (!el || !img || window.matchMedia("(pointer: coarse)").matches) return;
     const onMove = (e: MouseEvent) => {
       const r = el.getBoundingClientRect();
       const px = (e.clientX - r.left) / r.width - 0.5;
       const py = (e.clientY - r.top) / r.height - 0.5;
-      gsap.to(img, { rotateY: px * 7, rotateX: -py * 7, transformPerspective: 1000, duration: 0.5, ease: "power2.out" });
+      gsap.to(img, { rotateY: px * 5, rotateX: -py * 5, transformPerspective: 1000, duration: 0.4, ease: "power2.out" });
     };
-    const onLeave = () => gsap.to(img, { rotateX: 0, rotateY: 0, duration: 0.8, ease: "elastic.out(1,0.5)" });
+    const onLeave = () => gsap.to(img, { rotateX: 0, rotateY: 0, duration: 0.6, ease: "power2.out" });
     el.addEventListener("mousemove", onMove);
     el.addEventListener("mouseleave", onLeave);
     return () => {
@@ -138,39 +130,62 @@ function ProjectCard({
         flip ? "lg:[&>*:first-child]:order-2" : ""
       }`}
     >
+      {/* Browser Window Mockup Frame with Exact Aspect Ratio (Fit & Clear) */}
       <button
         onClick={() => onOpen(p)}
         data-cursor="view"
-        className="reveal-img card-sheen relative block aspect-[16/10] w-full overflow-hidden rounded-3xl border border-[#26262d] text-left transition-colors duration-500 hover:border-[#d6ff3f]/50"
+        className="reveal-card relative block w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-[#26262d] bg-[#121215] text-left transition-all duration-500 hover:border-[#d6ff3f]/60 hover:shadow-[0_0_35px_rgba(214,255,63,0.12)]"
       >
-        <img
-          src={p.image}
-          alt={p.title}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-85" />
-        
-        {/* Top Badges */}
-        <div className="absolute left-3 top-3 sm:left-5 sm:top-5 flex flex-wrap gap-1.5 sm:gap-2 max-w-[90%]">
-          {p.tags.slice(0, 3).map((t) => (
-            <span key={t} className="rounded-full bg-black/70 border border-white/10 px-2.5 py-1 sm:px-3 sm:py-1.5 font-mono2 text-[9px] sm:text-[10px] uppercase tracking-[0.12em] text-[#f2f1ea] backdrop-blur-md whitespace-nowrap">
+        {/* Realistic Browser Window Top Bar */}
+        <div className="flex items-center justify-between border-b border-[#26262d] bg-[#18181d] px-3.5 py-2.5 sm:px-5 sm:py-3">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
+          </div>
+
+          <div className="flex items-center gap-1.5 rounded-full border border-white/5 bg-black/50 px-3 py-1 font-mono2 text-[10px] text-[#8b8b94] max-w-[200px] sm:max-w-[280px] truncate">
+            <span className="text-[#d6ff3f]">https://</span>
+            <span className="truncate text-[#f2f1ea]">{p.liveUrl.replace("https://", "").replace("http://", "").replace(/\/$/, "")}</span>
+          </div>
+
+          <span className="rounded-full bg-[#d6ff3f]/10 border border-[#d6ff3f]/30 px-2.5 py-0.5 font-mono2 text-[10px] font-bold text-[#d6ff3f]">
+            {p.index}
+          </span>
+        </div>
+
+        {/* 100% Fit & Crisp Canvas (Matches 1024x465 Aspect Ratio Exactly) */}
+        <div className="relative w-full aspect-[1024/465] overflow-hidden bg-[#0a0a0c]">
+          <img
+            src={p.image}
+            alt={p.title}
+            className="h-full w-full object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Hover Action Badge */}
+        <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 grid h-10 w-10 sm:h-12 sm:w-12 place-items-center rounded-full bg-[#d6ff3f] text-black opacity-0 shadow-lg transition-all duration-300 group-hover:opacity-100 scale-75 group-hover:scale-100">
+          <ArrowUpRight size={18} />
+        </div>
+      </button>
+
+      {/* Description & Details Column */}
+      <div className="wc-title">
+        {/* Project Tags */}
+        <div className="mb-2 flex flex-wrap gap-1.5">
+          {p.tags.map((t) => (
+            <span key={t} className="rounded-full border border-[#26262d] bg-[#18181d] px-2.5 py-0.5 font-mono2 text-[9px] uppercase tracking-wider text-[#b9b9c2]">
               {t}
             </span>
           ))}
         </div>
-        <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5 grid h-11 w-11 sm:h-14 sm:w-14 place-items-center rounded-full bg-[#d6ff3f] text-black opacity-0 transition-all duration-500 group-hover:opacity-100 scale-75 group-hover:scale-100 shadow-[0_0_24px_rgba(214,255,63,0.4)]">
-          <ArrowUpRight size={20} />
-        </div>
-        <span className="absolute bottom-3 left-4 sm:bottom-5 sm:left-5 font-display text-4xl sm:text-6xl font-extrabold text-white/20">{p.index}</span>
-      </button>
 
-      <div className="wc-title">
-        <div className="mb-2 flex flex-wrap items-center gap-2">
-          <p className="font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#d6ff3f]">
-            {p.index} — {p.year} · {p.role}
-          </p>
-        </div>
-        <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
+        <p className="font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#d6ff3f]">
+          {p.index} — {p.year} · {p.role}
+        </p>
+
+        <h3 className="mt-1 font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
           {p.title}
           <span className="text-[#d6ff3f]">.</span>
         </h3>

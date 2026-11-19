@@ -82,9 +82,20 @@ export default function CaseStudy({ project, onClose }: { project: Project | nul
             </h2>
             <p className="cs-stagger mt-2 text-lg text-[#8b8b94]">{project.subtitle}</p>
 
-            <div className="cs-hero-img relative mt-6 aspect-[16/8] overflow-hidden rounded-3xl border border-[#26262d]">
-              <img src={project.image} alt={project.title} className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+            <div className="cs-hero-img relative mt-6 w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-[#26262d] bg-[#121215]">
+              {/* Browser bar */}
+              <div className="flex items-center justify-between border-b border-[#26262d] bg-[#18181d] px-4 py-2.5">
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
+                </div>
+                <span className="font-mono2 text-[10px] text-[#8b8b94]">{project.liveUrl}</span>
+                <span className="font-mono2 text-[10px] text-[#d6ff3f]">{project.index}</span>
+              </div>
+              <div className="relative w-full aspect-[1024/465] overflow-hidden bg-[#0c0c0e]">
+                <img src={project.image} alt={project.title} className="h-full w-full object-cover object-top" />
+              </div>
             </div>
 
             <div className="cs-stagger mt-6 flex flex-wrap gap-2">
