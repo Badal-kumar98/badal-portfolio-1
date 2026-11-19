@@ -64,8 +64,11 @@ export default function Footer() {
               <a href={`mailto:${PROFILE.email}`} className="w-fit text-sm text-[#b9b9c2] transition-colors hover:text-[#d6ff3f]">
                 Email
               </a>
-              <a href="/badal_kumar_resume.html" target="_blank" rel="noopener noreferrer" className="w-fit text-sm text-[#b9b9c2] transition-colors hover:text-[#d6ff3f]">
-                Resume ↗
+              <a href="./Badal_Kumar_Resume.pdf" target="_blank" rel="noopener noreferrer" className="w-fit text-sm text-[#b9b9c2] transition-colors hover:text-[#d6ff3f]">
+                Resume (PDF) ↗
+              </a>
+              <a href="./badal_kumar_resume.html" target="_blank" rel="noopener noreferrer" className="w-fit text-sm text-[#b9b9c2] transition-colors hover:text-[#d6ff3f]">
+                Resume (Web) ↗
               </a>
             </div>
           </div>

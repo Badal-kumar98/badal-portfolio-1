@@ -121,7 +121,7 @@ export default function About() {
             <a
               ref={dlRef}
               data-magnetic
-              href="/Badal_Kumar_Resume.pdf"
+              href="./Badal_Kumar_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-full bg-[#d6ff3f] px-5 py-3 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.03]"

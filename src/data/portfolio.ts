@@ -11,8 +11,8 @@ export const PROFILE = {
   lighthouse: "95+",
   github: "https://github.com/Badal-kumar98",
   linkedin: "https://linkedin.com/in/badal-kumar-200b45324",
-  resumeUrl: "/badal_kumar_resume.html",
-  resumePdfUrl: "/Badal_Kumar_Resume.pdf",
+  resumeUrl: "./badal_kumar_resume.html",
+  resumePdfUrl: "./Badal_Kumar_Resume.pdf",
 };
 
 export type Project = {
