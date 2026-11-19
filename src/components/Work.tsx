@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Lock, ShieldCheck } from "lucide-react";
 import { gsap } from "../lib/smooth";
 import { PROJECTS, type Project } from "../data/portfolio";
 
@@ -148,8 +148,15 @@ function ProjectCard({
           alt={p.title}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent opacity-80" />
-        <div className="absolute left-3 top-3 sm:left-5 sm:top-5 flex flex-wrap gap-1.5 sm:gap-2 max-w-[85%]">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-85" />
+        
+        {/* Top Badges */}
+        <div className="absolute left-3 top-3 sm:left-5 sm:top-5 flex flex-wrap gap-1.5 sm:gap-2 max-w-[90%]">
+          {p.isProtected && (
+            <span className="flex items-center gap-1 rounded-full bg-[#0284c7]/80 px-2.5 py-1 sm:px-3 sm:py-1.5 font-mono2 text-[9px] sm:text-[10px] uppercase tracking-[0.14em] text-white backdrop-blur-md">
+              <Lock size={11} /> Enterprise B2B CRM
+            </span>
+          )}
           {p.tags.slice(0, 3).map((t) => (
             <span key={t} className="rounded-full bg-black/60 px-2.5 py-1 sm:px-3 sm:py-1.5 font-mono2 text-[9px] sm:text-[10px] uppercase tracking-[0.12em] text-white backdrop-blur-md whitespace-nowrap">
               {t}
@@ -163,9 +170,16 @@ function ProjectCard({
       </button>
 
       <div className="wc-title">
-        <p className="mb-2 font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.2em]" style={{ color: p.accent }}>
-          {p.index} — {p.year} · {p.role}
-        </p>
+        <div className="mb-2 flex flex-wrap items-center gap-2">
+          <p className="font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.2em]" style={{ color: p.accent }}>
+            {p.index} — {p.year} · {p.role}
+          </p>
+          {p.isProtected && (
+            <span className="inline-flex items-center gap-1 rounded bg-[#0284c7]/20 px-2 py-0.5 font-mono2 text-[9px] uppercase tracking-wider text-[#38bdf8]">
+              <ShieldCheck size={12} /> Protected B2B System
+            </span>
+          )}
+        </div>
         <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
           {p.title}
           <span className="text-[#d6ff3f]">.</span>
@@ -186,7 +200,7 @@ function ProjectCard({
             rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-full border border-[#2e2e36] px-4 py-2.5 sm:px-5 sm:py-3 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-white transition-all hover:border-[#d6ff3f] hover:text-[#d6ff3f]"
           >
-            Live Demo ↗
+            {p.isProtected ? "Portal Login ↗" : "Live Demo ↗"}
           </a>
           <span className="font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#8b8b94]">{p.year}</span>
         </div>
@@ -197,14 +211,18 @@ function ProjectCard({
 
 export default function Work({ onOpen }: { onOpen: (p: Project) => void }) {
   const [filter, setFilter] = useState("All");
-  const filters = ["All", "React", "TypeScript", "Redux", "SaaS"];
-  const list = PROJECTS.filter((p) =>
-    filter === "All" ? true : p.tags.some((t) => t.toLowerCase().includes(filter.toLowerCase()))
-  );
+  const filters = ["All", "Enterprise CRMs", "Client Platforms", "E-Commerce", "TypeScript"];
+  
+  const list = PROJECTS.filter((p) => {
+    if (filter === "All") return true;
+    if (filter === "Enterprise CRMs") return p.category === "crm";
+    if (filter === "Client Platforms") return p.category === "client";
+    return p.tags.some((t) => t.toLowerCase().includes(filter.toLowerCase()));
+  });
 
   return (
     <section id="work" className="relative py-20 sm:py-24 md:py-32">
-      <SectionHead num="( 01 )" hint="Flagship Production Systems" title={<>Work that ships<span className="text-[#d6ff3f]">,</span> code that <span className="text-stroke">performs.</span></>} />
+      <SectionHead num="( 01 )" hint="Production Systems & Enterprise CRMs" title={<>Work that ships<span className="text-[#d6ff3f]">,</span> code that <span className="text-stroke">performs.</span></>} />
 
       {/* Filter tabs */}
       <div className="mx-auto mb-10 sm:mb-14 flex max-w-[1500px] flex-wrap items-center gap-2 px-5 md:px-10">
@@ -222,6 +240,21 @@ export default function Work({ onOpen }: { onOpen: (p: Project) => void }) {
           </button>
         ))}
       </div>
+
+      {/* Enterprise CRM Callout Banner when CRMs are focused */}
+      {(filter === "All" || filter === "Enterprise CRMs") && (
+        <div className="mx-auto mb-12 sm:mb-16 max-w-[1500px] px-5 md:px-10">
+          <div className="rounded-2xl border border-[#0284c7]/40 bg-[#0284c7]/10 p-5 sm:p-6 text-sm text-[#bae6fd]">
+            <div className="flex items-center gap-2 text-[#38bdf8] font-bold text-base mb-2">
+              <ShieldCheck size={18} />
+              <span>Enterprise B2B Notice for Interviewers & Technical Recruiters</span>
+            </div>
+            <p className="leading-relaxed text-[#93c5fd]">
+              These enterprise CRM platforms are internal company systems built for employees, dealership networks, and business administrators. Due to role-based access control (RBAC) and enterprise confidentiality, access is gated to authenticated users. Architecture diagrams, normalized database schemas, and live interactive walkthroughs are demonstrated during technical interviews.
+            </p>
+          </div>
+        </div>
+      )}
 
       <div className="mx-auto flex max-w-[1500px] flex-col gap-20 px-5 md:gap-28 md:px-10">
         {list.map((p, i) => (
