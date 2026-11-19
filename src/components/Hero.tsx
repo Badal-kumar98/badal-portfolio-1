@@ -64,7 +64,7 @@ export default function Hero({ ready }: { ready: boolean }) {
       {/* backdrop typography */}
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-16 select-none overflow-hidden">
         <p className="hero-fade whitespace-nowrap text-center font-display text-[19vw] font-extrabold leading-none text-stroke-faint opacity-60">
-          FRONTEND DEV —
+          FULL STACK DEV —
         </p>
       </div>
       <div aria-hidden className="dot-grid pointer-events-none absolute right-0 top-0 h-[480px] w-[420px] opacity-40 [mask-image:radial-gradient(closest-side,black,transparent)]" />
@@ -82,13 +82,13 @@ export default function Hero({ ready }: { ready: boolean }) {
           </div>
 
           <h1 className="font-display font-extrabold leading-[0.92] tracking-tight overflow-hidden">
-            <SplitLines text="FRONTEND" className="text-[10vw] sm:text-[8.5vw] md:text-[7.5vw] lg:text-[5.4vw] xl:text-[5vw] 2xl:text-[74px] whitespace-nowrap" delay={0} />
+            <SplitLines text="FULL STACK" className="text-[10vw] sm:text-[8.5vw] md:text-[7.5vw] lg:text-[5.4vw] xl:text-[5vw] 2xl:text-[74px] whitespace-nowrap" delay={0} />
             <SplitLines text="DEVELOPER" className="text-stroke text-[10vw] sm:text-[8.5vw] md:text-[7.5vw] lg:text-[5.4vw] xl:text-[5vw] 2xl:text-[74px] whitespace-nowrap" delay={0.1} />
-            <SplitLines text="& REACT.JS" className="text-[#d6ff3f] text-[10vw] sm:text-[8.5vw] md:text-[7.5vw] lg:text-[5.4vw] xl:text-[5vw] 2xl:text-[74px] whitespace-nowrap" delay={0.2} />
+            <SplitLines text="& MERN STACK" className="text-[#d6ff3f] text-[10vw] sm:text-[8.5vw] md:text-[7.5vw] lg:text-[5.4vw] xl:text-[5vw] 2xl:text-[74px] whitespace-nowrap" delay={0.2} />
           </h1>
 
           <p className="hero-fade mt-6 max-w-xl text-sm leading-relaxed text-[#b9b9c2] sm:text-base md:text-lg">
-            Hey, I'm <span className="font-semibold text-white">{PROFILE.name}</span> — {PROFILE.tagline} Shipped 12+ live client frontends with TypeScript, Redux Toolkit, and Agora RTC with verified 95+ mobile Lighthouse performance scores.
+            Hey, I'm <span className="font-semibold text-white">{PROFILE.name}</span> — {PROFILE.tagline} Shipped 14+ live client platforms and enterprise CRMs with React, Node.js, Express, MongoDB, and TypeScript with verified 95+ mobile Lighthouse performance.
           </p>
 
           <div className="hero-fade mt-7 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">

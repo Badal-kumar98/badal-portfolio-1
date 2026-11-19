@@ -100,7 +100,7 @@ export default function Contact() {
             <p className="font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#d6ff3f]">Availability</p>
             <h4 className="mt-2 font-display text-xl sm:text-2xl font-bold text-white">Full-Time Engineering Roles</h4>
             <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm leading-relaxed text-[#b9b9c2]">
-              Looking for frontend developer roles in Delhi NCR (Noida, Gurugram, Delhi) or remote. Ready to build high-performance React applications and enterprise UI systems.
+              Looking for full stack or frontend developer roles in Delhi NCR (Noida, Gurugram, Delhi) or remote. Ready to build high-performance React/Node.js web applications, enterprise CRMs, and robust REST APIs.
             </p>
             <div className="mt-4 sm:mt-5 flex items-center gap-2.5 font-mono2 text-[11px] sm:text-xs text-[#8b8b94]">
               <span className="h-2 w-2 rounded-full bg-[#4ade80] animate-pulse" /> Notice Period: Available Soon / Flexible

@@ -94,17 +94,17 @@ export default function About() {
       <div className="mx-auto grid max-w-[1500px] gap-12 px-5 md:px-10 lg:grid-cols-[1fr_1fr]">
         <div>
           <p className="about-statement font-display text-xl sm:text-2xl font-bold leading-snug md:text-[2rem]">
-            I build frontend applications that solve real business problems — blending{" "}
-            <span className="text-[#d6ff3f]">React architecture</span> with{" "}
-            <span className="text-white underline decoration-[#8b7bff] decoration-2 underline-offset-4">TypeScript type safety</span> to create fast, resilient user workflows.
+            I build full stack web applications that solve real business problems — blending{" "}
+            <span className="text-[#d6ff3f]">React & Next.js frontend</span> with{" "}
+            <span className="text-white underline decoration-[#8b7bff] decoration-2 underline-offset-4">Node.js, Express & MongoDB backend</span> to create fast, resilient user workflows.
           </p>
           <p className="mt-5 sm:mt-6 max-w-xl text-sm sm:text-base leading-relaxed text-[#b9b9c2]">
-            Based in Delhi NCR, I work as a Frontend Developer at Koncept Software Solutions. Over the past 1.6+ years, I have architected and shipped frontends across 12+ production client web apps and SaaS platforms in FinTech, LegalTech, E-Commerce, and Industrial Operations — taking Figma designs into pixel-perfect, accessible component systems.
+            Based in Delhi NCR, I work as a Full Stack Developer at Koncept Software Solutions. Over the past 1.5+ years, I have architected and shipped 14+ production client web apps and enterprise CRMs in FinTech, LegalTech, E-Commerce, and Industrial Operations — building normalized MongoDB schemas, secure Node/Express REST APIs, and high-performance React/TypeScript user interfaces.
           </p>
 
           <div className="mt-7 sm:mt-8 grid grid-cols-3 gap-2.5 sm:gap-3">
             {[
-              { v: 12, l: "Projects shipped", s: "+" },
+              { v: 14, l: "Projects shipped", s: "+" },
               { v: 10, l: "Client portals", s: "+" },
               { v: 95, l: "Mobile Lighthouse", s: "+" },
             ].map((c) => (
@@ -121,12 +121,12 @@ export default function About() {
             <a
               ref={dlRef}
               data-magnetic
-              href="/badal_kumar_resume.html"
+              href="/Badal_Kumar_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-full bg-[#d6ff3f] px-5 py-3 text-xs sm:text-[13px] font-bold uppercase tracking-wider text-black transition-transform hover:scale-[1.03]"
             >
-              <Download size={15} /> View / Download Résumé
+              <Download size={15} /> View / Download Résumé (PDF)
             </a>
             <span className="flex items-center justify-center gap-2 rounded-full border border-[#2e2e36] px-5 py-3 font-mono2 text-[10px] sm:text-[11px] uppercase tracking-[0.16em] sm:tracking-[0.2em] text-[#8b8b94]">
               <GraduationCap size={15} /> BCA · IGNOU (Pursuing)

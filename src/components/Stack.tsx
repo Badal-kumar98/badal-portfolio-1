@@ -55,8 +55,8 @@ export default function Stack() {
           <div className="absolute inset-[26%] rounded-full border border-[#26262d] bg-[#0a0a0b]/60 backdrop-blur" />
           <div className="absolute inset-0 grid place-items-center">
             <div className="text-center">
-              <p className="font-display text-3xl sm:text-5xl font-extrabold md:text-6xl">1.6<span className="text-[#d6ff3f]">+</span></p>
-              <p className="mt-1 font-mono2 text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-[#8b8b94]">Years in React</p>
+              <p className="font-display text-3xl sm:text-5xl font-extrabold md:text-6xl">1.5<span className="text-[#d6ff3f]">+</span></p>
+              <p className="mt-1 font-mono2 text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-[#8b8b94]">Years in Full Stack</p>
             </div>
           </div>
           {STACK.slice(0, 8).map((s, i) => {

@@ -39,7 +39,7 @@ export default function Footer() {
               <span className="font-mono2 text-[11px] uppercase tracking-[0.25em] text-[#8b8b94]">© 2026 All rights</span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#8b8b94]">
-              Frontend Developer building high-performance web apps, responsive dashboards & design systems from New Delhi, India.
+              Full Stack Developer (MERN) building high-performance web apps, enterprise CRMs, and scalable APIs from New Delhi, India.
             </p>
           </div>
           <div>
