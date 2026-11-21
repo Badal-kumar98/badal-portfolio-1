@@ -88,7 +88,7 @@ export default function Hero({ ready }: { ready: boolean }) {
           </h1>
 
           <p className="hero-fade mt-6 max-w-xl text-sm leading-relaxed text-[#b9b9c2] sm:text-base md:text-lg">
-            Hey, I'm <span className="font-semibold text-white">{PROFILE.name}</span> — {PROFILE.tagline} Shipped 14+ live client platforms and enterprise CRMs with React, Node.js, Express, MongoDB, and TypeScript with verified 95+ mobile Lighthouse performance.
+            Hey, I'm <span className="font-semibold text-white">{PROFILE.name}</span> — {PROFILE.tagline} Shipped 20+ live client platforms and enterprise CRMs with React, Node.js, Express, MongoDB, and TypeScript with verified 95+ mobile Lighthouse performance.
           </p>
 
           <div className="hero-fade mt-7 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">

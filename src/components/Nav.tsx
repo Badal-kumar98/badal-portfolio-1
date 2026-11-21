@@ -111,7 +111,7 @@ export default function Nav({ ready }: { ready: boolean }) {
 
           <div className="flex items-center gap-3">
             <a
-              href="./Badal_Kumar_Resume.pdf"
+              href={PROFILE.resumePdfUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden rounded-full border border-[#2e2e36] px-5 py-2.5 font-mono2 text-xs uppercase tracking-[0.2em] text-white transition-all hover:border-[#d6ff3f] hover:text-[#d6ff3f] md:inline-flex"
@@ -147,7 +147,7 @@ export default function Nav({ ready }: { ready: boolean }) {
             </button>
           ))}
           <a
-            href="./Badal_Kumar_Resume.pdf"
+            href={PROFILE.resumePdfUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="m-link mt-4 flex items-center justify-between text-left font-display text-2xl font-bold text-[#d6ff3f]"

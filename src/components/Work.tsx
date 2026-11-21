@@ -251,6 +251,35 @@ function CRMCard({ crm }: { crm: EnterpriseCRM }) {
           {crm.description}
         </p>
 
+        {/* Modules & What Was Built */}
+        {crm.whatWasBuilt && crm.whatWasBuilt.length > 0 && (
+          <div className="mt-4 pt-3 border-t border-[#26262d]/70">
+            <p className="font-mono2 text-[10px] uppercase tracking-wider text-[#d6ff3f] mb-2 font-semibold">
+              // Modules Built & Architecture:
+            </p>
+            <ul className="space-y-1.5 text-xs text-[#b9b9c2]">
+              {crm.whatWasBuilt.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-2">
+                  <span className="text-[#d6ff3f] font-mono select-none">▸</span>
+                  <span className="leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* How It Works */}
+        {crm.howItWorks && (
+          <div className="mt-4 rounded-xl border border-[#26262d] bg-black/50 p-3.5">
+            <p className="font-mono2 text-[10px] uppercase tracking-wider text-[#8b8b94] mb-1 font-semibold">
+              Operational Flow & Business Logic:
+            </p>
+            <p className="text-xs text-[#b9b9c2] leading-relaxed">
+              {crm.howItWorks}
+            </p>
+          </div>
+        )}
+
         {/* Tech stack badges */}
         <div className="mt-4 flex flex-wrap gap-1.5">
           {crm.stack.map((st) => (
@@ -261,19 +290,14 @@ function CRMCard({ crm }: { crm: EnterpriseCRM }) {
         </div>
       </div>
 
-      {/* Footer row */}
+      {/* Footer row - Protected Notice with NO external live link as requested */}
       <div className="mt-6 pt-5 border-t border-[#26262d] flex items-center justify-between gap-3">
         <span className="font-mono2 text-[10px] text-[#8b8b94] truncate">
           {crm.metrics}
         </span>
-        <a
-          href={crm.portalUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 font-mono2 text-xs font-semibold text-[#d6ff3f] transition-transform hover:translate-x-1"
-        >
-          Portal Login ↗
-        </a>
+        <span className="inline-flex items-center gap-1.5 font-mono2 text-xs font-semibold text-[#8b8b94]">
+          <Lock size={12} className="text-[#d6ff3f]" /> Protected B2B Portal
+        </span>
       </div>
     </div>
   );
